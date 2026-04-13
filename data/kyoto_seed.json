@@ -1,0 +1,26 @@
+{
+  "city": "Kyoto",
+  "region": "Kansai",
+  "spots": [
+    {"name": "Fushimi Inari Taisha",    "coords": {"x": 72, "y": 78}, "category": "Shrine",    "trivia": "Famous for its thousands of vermilion torii gates winding up Mt. Inari. Dedicated to Inari, the god of rice and foxes."},
+    {"name": "Kinkaku-ji (Golden Pavilion)", "coords": {"x": 22, "y": 18}, "category": "Temple", "trivia": "A Zen Buddhist temple whose top two floors are covered in gold leaf. A UNESCO World Heritage Site."},
+    {"name": "Nijo Castle",             "coords": {"x": 40, "y": 35}, "category": "Fortress",  "trivia": "Built in 1603 for Tokugawa Ieyasu. Famous for its 'nightingale floors' that squeak to detect intruders."},
+    {"name": "Arashiyama Bamboo Grove", "coords": {"x": 15, "y": 50}, "category": "Garden",   "trivia": "A magical grove of towering bamboo stalks northwest of Kyoto. The sound of wind through the bamboo is nationally protected."},
+    {"name": "Togetsu-kyo Bridge",      "coords": {"x": 12, "y": 62}, "category": "Structure", "trivia": "The 'Moon Crossing Bridge' spans the Oi River at Arashiyama. A symbol of Kyoto romanticism."},
+    {"name": "Nishiki Market",          "coords": {"x": 50, "y": 52}, "category": "Eatery",   "trivia": "Known as 'Kyoto's Kitchen' — a narrow five-block shopping street lined with over 100 vendors selling traditional foods."},
+    {"name": "Gion District",           "coords": {"x": 65, "y": 55}, "category": "District",  "trivia": "Kyoto's most famous geisha district. Preserved machiya townhouses and cobblestone lanes evoke the Edo period."},
+    {"name": "Ryoan-ji Temple",         "coords": {"x": 18, "y": 22}, "category": "Temple",   "trivia": "Home to Japan's most celebrated Zen rock garden — 15 stones arranged so that at least one is always hidden from view."},
+    {"name": "Yasaka Shrine",           "coords": {"x": 70, "y": 50}, "category": "Shrine",   "trivia": "Presides over Gion and hosts the Gion Matsuri, Kyoto's grandest festival dating back to 869 CE."},
+    {"name": "Heian Jingu Shrine",      "coords": {"x": 62, "y": 28}, "category": "Shrine",   "trivia": "Built in 1895 to commemorate Kyoto's 1100th anniversary. Its vast garden recreates Heian-era landscape design."},
+    {"name": "Philosopher's Path",      "coords": {"x": 68, "y": 35}, "category": "Structure", "trivia": "A stone path along a canal lined with hundreds of cherry trees, named after philosopher Nishida Kitaro who meditated here."},
+    {"name": "Pontocho Alley",          "coords": {"x": 52, "y": 58}, "category": "Eatery",   "trivia": "A narrow lantern-lit alley between the Kamo River and Kawaramachi, famed for its traditional kaiseki restaurants."},
+    {"name": "Kiyomizu-dera Temple",    "coords": {"x": 78, "y": 72}, "category": "Temple",   "trivia": "Built on a hillside with a famous wooden stage extending over a cliff. Offers panoramic views of Kyoto below."},
+    {"name": "Sanjusangen-do Temple",   "coords": {"x": 68, "y": 78}, "category": "Temple",   "trivia": "Houses 1,001 life-sized wooden statues of Kannon, the goddess of mercy. The longest wooden structure in Japan."},
+    {"name": "Ninna-ji Temple",         "coords": {"x": 14, "y": 28}, "category": "Temple",   "trivia": "A UNESCO site with a five-story pagoda. Famous for late-blooming dwarf cherry trees called Omuro cherries."},
+    {"name": "Daitoku-ji Complex",      "coords": {"x": 28, "y": 20}, "category": "Temple",   "trivia": "A Zen Buddhist complex comprising 22 sub-temples with some of Kyoto's finest rock gardens."},
+    {"name": "Fure-ai Kan Museum",      "coords": {"x": 55, "y": 38}, "category": "District",  "trivia": "A museum in the heart of Kyoto preserving traditional arts, crafts, and the culture of the Nishijin textile weavers."},
+    {"name": "Tenryu-ji Garden",        "coords": {"x": 12, "y": 45}, "category": "Garden",   "trivia": "A UNESCO World Heritage garden that uses 'borrowed scenery' — the Arashiyama mountains frame its central pond."},
+    {"name": "Shimogamo Shrine",        "coords": {"x": 52, "y": 22}, "category": "Shrine",   "trivia": "One of Kyoto's oldest shrines, surrounded by the Tadasu no Mori primeval forest. Hosts the Aoi Matsuri ceremony."},
+    {"name": "Kyoto Imperial Palace",   "coords": {"x": 48, "y": 30}, "category": "Fortress",  "trivia": "The former ruling seat of Japan's Imperial family. The grounds are now a public park open for strolling year-round."}
+  ]
+}

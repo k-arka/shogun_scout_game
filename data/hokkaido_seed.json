@@ -1,0 +1,26 @@
+{
+  "city": "Hokkaido",
+  "region": "Northern Japan",
+  "spots": [
+    {"name": "Sapporo Odori Park",       "coords": {"x": 50, "y": 50}, "category": "Garden",   "trivia": "A 1.5 km green corridor through central Sapporo, famous for the Snow Festival ice sculptures every February."},
+    {"name": "Hokkaido Shrine",          "coords": {"x": 32, "y": 38}, "category": "Shrine",   "trivia": "The most important shrine in Hokkaido, enshrining the development gods of the island. Set within a forested park."},
+    {"name": "Goryokaku Fort",           "coords": {"x": 78, "y": 72}, "category": "Fortress",  "trivia": "Japan's first Western-style star fort, built in 1864 in a five-pointed star shape visible from the observation tower."},
+    {"name": "Noboribetsu Hell Valley",  "coords": {"x": 55, "y": 72}, "category": "Structure", "trivia": "A volcanic valley with boiling sulphur pools and steaming vents. Oni demon statues guard the otherworldly landscape."},
+    {"name": "Shiroi Koibito Park",      "coords": {"x": 38, "y": 42}, "category": "District",  "trivia": "A fanciful European-castle themed confectionery park celebrating Hokkaido's most famous chocolate cookie."},
+    {"name": "Nijo Fish Market",         "coords": {"x": 52, "y": 52}, "category": "Eatery",   "trivia": "Sapporo's oldest fish market selling the finest Hokkaido sea urchin, crab, and salmon directly from the boats."},
+    {"name": "Shikisai-no-Oka Farm",     "coords": {"x": 60, "y": 28}, "category": "Garden",   "trivia": "A flower farm in Biei with seasonal waves of lavender, sunflowers, and rainbow-coloured fields across rolling hills."},
+    {"name": "Blue Pond Biei",           "coords": {"x": 55, "y": 22}, "category": "Structure", "trivia": "An otherworldly pond of stunning cobalt blue caused by aluminium hydroxide, surrounded by dead silver birch trunks."},
+    {"name": "Daisetsuzan Grand Hotel",  "coords": {"x": 45, "y": 18}, "category": "Structure", "trivia": "Gateway to Daisetsuzan National Park, Japan's largest national park featuring active volcanoes and alpine meadows."},
+    {"name": "Kushiro Wetlands",         "coords": {"x": 82, "y": 62}, "category": "Garden",   "trivia": "Japan's largest wetland, a UNESCO Ramsar site and the habitat of the endangered red-crowned crane."},
+    {"name": "Lake Toya",               "coords": {"x": 40, "y": 75}, "category": "Garden",   "trivia": "A circular caldera lake around a volcanic island. Fireworks are launched over the lake every night during summer."},
+    {"name": "Hakodate Morning Market", "coords": {"x": 76, "y": 78}, "category": "Eatery",   "trivia": "Hakodate's beloved morning market with hundreds of fresh seafood stalls opening at 5am daily."},
+    {"name": "Trappistine Convent",     "coords": {"x": 72, "y": 80}, "category": "Structure", "trivia": "A 19th-century French-style convent famous for its butter cookies and the tree-lined avenue leading to its gates."},
+    {"name": "Hokkaido University Ginkgo","coords": {"x": 48, "y": 44}, "category": "Garden",  "trivia": "A stunning avenue of golden ginkgo trees winding through the historic Hokkaido University campus in Sapporo."},
+    {"name": "Sahoro Resort Bear Mountain","coords":{"x": 62, "y": 40}, "category": "Garden",  "trivia": "A wildlife sanctuary where brown bears roam freely across vast open fields, observable from elevated catwalks."},
+    {"name": "Otaru Canal",             "coords": {"x": 35, "y": 48}, "category": "Structure", "trivia": "A 19th-century canal lined with restored stone warehouses converted into romantic restaurants and glass shops."},
+    {"name": "Yoichi Distillery",       "coords": {"x": 28, "y": 52}, "category": "Eatery",   "trivia": "Where Masataka Taketsuru founded Nikka Whisky in 1934 after studying Scottish distillation craft. Free tastings available."},
+    {"name": "Hokkaido Shrine Sapporo", "coords": {"x": 33, "y": 36}, "category": "Shrine",   "trivia": "Inner precinct shrine within the forested Maruyama Park, a tranquil escape in the heart of Sapporo."},
+    {"name": "Rebun Island Kagome Park","coords": {"x": 12, "y": 12}, "category": "Garden",   "trivia": "On Japan's northernmost island, alpine flowers bloom at sea level every June due to the unique Arctic climate."},
+    {"name": "Abashiri Prison Museum",  "coords": {"x": 88, "y": 30}, "category": "District",  "trivia": "The preserved buildings of Hokkaido's notorious 19th-century prison, where convicts built the island's roads."}
+  ]
+}

@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Kaisei+Decol:wght@400;700&family=IM+Fell+English+SC:ital@0;1&display=swap");
+@import "tailwindcss";
+
+/* ─── Japanese Aesthetic Layers ──────────────────────────────────────────── */
+
+:root {
+  /* Default theme variables set here; overridden by theme classes on <body> */
+  --bg:     #0f172a;
+  --text:   #ffedd5;
+  --accent: #f97316;
+  --fog:    rgba(15, 23, 42, 0.92);
+  --accent-glow: hsl(30, 80%, 60%);
+}
+
+/* ─── Atmospheric Theme Matrices ─────────────────────────────────────────── */
+.theme-nature-mist {
+  --bg:          #1b2723;
+  --text:        #e6ebd6;
+  --accent:      #76a382;
+  --fog:         rgba(27, 39, 35, 0.92);
+  --accent-glow: hsl(145, 30%, 50%);
+}
+
+.theme-lantern-dusk {
+  --bg:          #0f172a;
+  --text:        #ffedd5;
+  --accent:      #f97316;
+  --fog:         rgba(15, 23, 42, 0.92);
+  --accent-glow: hsl(30, 80%, 60%);
+}
+
+.theme-cyber-smoke {
+  --bg:          #020617;
+  --text:        #22d3ee;
+  --accent:      #06b6d4;
+  --fog:         rgba(2, 6, 23, 0.92);
+  --accent-glow: hsl(180, 100%, 50%);
+}
+
+.theme-castle-shadows {
+  --bg:          #0a0a0a;
+  --text:        #d6d3d1;
+  --accent:      #d4af37;
+  --fog:         rgba(0, 0, 0, 0.92);
+  --accent-glow: hsl(35, 20%, 30%);
+}
+
+/* ─── Global Base ────────────────────────────────────────────────────────── */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Serif JP', serif;
+  transition: background-color 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Typography Utilities ───────────────────────────────────────────────── */
+.font-heading {
+  font-family: 'Kaisei Decol', serif;
+}
+
+/* Headers / Titles in Japanese vertical style */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+/* ─── Ukiyo-e Washi Paper Texture (light themes only) ───────────────────── */
+.washi-texture::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Bushido Buttons ────────────────────────────────────────────────────── */
+.bushido-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @apply border px-4 py-2 transition-all duration-300 relative overflow-hidden;
+  background: transparent;
+  border-color: var(--accent);
+  color: var(--accent);
+  font-family: inherit;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+.bushido-btn:hover {
+  @apply scale-105;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.bushido-btn:active {
+  @apply scale-95;
+}
+
+/* ─── Scroll Overlay Utility ─────────────────────────────────────────────── */
+.scroll-texture {
+  background-image: url('/textures/parchment.png');
+  background-blend-mode: multiply;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Animations
+   ───────────────────────────────────────────────────────────────────────────── */
+@keyframes lantern-swing {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes flash-red {
+  0%, 100% { background: transparent; }
+  50% { background: rgba(178, 34, 34, 0.4); }
+}
+
+@keyframes petal-fall {
+  0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(100px, 110vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes aura-pulse {
+  0%, 100% { box-shadow: 0 0 10px var(--accent); }
+  50% { box-shadow: 0 0 25px var(--accent); }
+}
+
+/* ─── Beacon glow for far-off landmarks ("lantern in the fog") ─────────────
+   Spots outside the player's FOG_RADIUS get this slow breathing pulse behind
+   their icon. The glow uses the theme accent colour so it feels intentional
+   rather than generic. Scale pulsing is gentler than the player aura. */
+@keyframes beacon-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.55);
+    opacity: 0.85;
+  }
+}
+
+.beacon-pulse {
+  animation: beacon-breathe 3.2s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-lantern {
+  animation: lantern-swing 3s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.animate-petal {
+  animation: petal-fall 10s linear infinite;
+  position: absolute;
+  pointer-events: none;
+}
+
+.animate-aura {
+  animation: aura-pulse 2s ease-in-out infinite;
+}
+
+/* ─── Fog of War Grid ────────────────────────────────────────────────────── */
+.fog-container {
+  position: relative;
+  overflow: hidden;
+}
+/* The CSS radial gradient fog mask — animates around player position */
+.fog-mask {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  transition: background 0.15s ease-out;
+}
+
+/* ─── Interrogation Slash Animation ─────────────────────────────────────── */
+@keyframes slash-strike {
+  0%   { transform: translate(-120%, -120%) rotate(-45deg); opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translate(120%, 120%) rotate(-45deg); opacity: 0; }
+}
+
+.slash-line {
+  position: fixed;
+  top: 50%;
+  left: -50%;
+  width: 200vw;
+  height: 3px;
+  background: white;
+  transform-origin: center;
+  animation: slash-strike 0.32s ease-out forwards;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ─── HUD Accent Lines ───────────────────────────────────────────────────── */
+.accent-border-l {
+  border-left: 2px solid var(--accent);
+}
+
+/* ─── Scrollbar styling ──────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); }

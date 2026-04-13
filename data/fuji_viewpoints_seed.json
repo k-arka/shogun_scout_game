@@ -1,0 +1,26 @@
+{
+  "city": "Fuji Viewpoints",
+  "region": "Chubu & Kanto",
+  "spots": [
+    {"name": "Chureito Pagoda",          "coords": {"x": 35, "y": 25}, "category": "Temple",   "trivia": "A five-story pagoda framing Mt. Fuji in the distance — one of the most photographed views in all of Japan."},
+    {"name": "Kawaguchiko North Shore",  "coords": {"x": 38, "y": 55}, "category": "Garden",   "trivia": "The north shore of Lake Kawaguchi offers a mirror-like reflection of Mt. Fuji on still winter mornings."},
+    {"name": "Fujisan Hongu Sengen Shrine","coords": {"x": 55, "y": 62}, "category": "Shrine",  "trivia": "The main shrine of the Sengen network, dedicated to Princess Konohanasakuya-hime, goddess of Mt. Fuji."},
+    {"name": "Fuji 5th Station",         "coords": {"x": 50, "y": 35}, "category": "Structure", "trivia": "The most accessible point on Mt. Fuji at 2,305m. The starting point for most summit climbers on the Yoshida Trail."},
+    {"name": "Saiko Iyashi-no-Sato",    "coords": {"x": 28, "y": 52}, "category": "District",  "trivia": "A reconstructed historic village of traditional thatched farmhouses (kominka) with Fuji views across Lake Saiko."},
+    {"name": "Fujinomiya Yakisoba Street","coords": {"x": 55, "y": 72}, "category": "Eatery",   "trivia": "Fujinomiya city's famous B-grade gourmet specialty — chewy noodles with lard, dried sardines, and local sauce."},
+    {"name": "Oshino Hakkai Springs",    "coords": {"x": 48, "y": 48}, "category": "Garden",   "trivia": "Eight crystal-clear ponds fed by snowmelt from Mt. Fuji filtering through lava rock over 80 years underground."},
+    {"name": "Tanuki Lake Viewpoint",    "coords": {"x": 42, "y": 65}, "category": "Garden",   "trivia": "A quiet lake on the south side of Fuji offering serene reflections and a less-crowded alternative to Lake Kawaguchi."},
+    {"name": "Fuji Sengen Shrine Yoshida","coords": {"x": 38, "y": 32}, "category": "Shrine",  "trivia": "The start of the historic Yoshida pilgrimage trail. Stone lanterns line the path leading toward the summit."},
+    {"name": "Aokigahara Forest Trail",  "coords": {"x": 30, "y": 48}, "category": "Garden",   "trivia": "The hushed Sea of Trees at Fuji's base, formed from hardened lava 1,200 years ago. Compasses reportedly malfunction here."},
+    {"name": "Fuji Visitor Centre",      "coords": {"x": 52, "y": 40}, "category": "Structure", "trivia": "An educational centre at the 5th station explaining Fuji's volcanic history, folklore, and climbing ethics."},
+    {"name": "Shibazakura Festival Ground","coords":{"x": 45, "y": 58},"category": "Garden",  "trivia": "A hillside carpet of pink moss phlox (shibazakura) blooming every spring with Fuji towering behind."},
+    {"name": "Lake Yamanakako",          "coords": {"x": 62, "y": 42}, "category": "Garden",   "trivia": "The largest of the Fuji Five Lakes. On clear days, Fuji's 'Diamond Fuji' crown appears over the water at sunrise."},
+    {"name": "Narusawa Ice Cave",        "coords": {"x": 32, "y": 46}, "category": "Structure", "trivia": "A natural lava cave at the base of Fuji where ice formations persist year-round due to the constant 0°C temperature."},
+    {"name": "Fujimori Distillery",      "coords": {"x": 62, "y": 68}, "category": "Eatery",   "trivia": "A winery in the Fuji foothills producing Shingen wines from local Koshu grapes, with panoramic vineyard Fuji views."},
+    {"name": "Kitano Tenmangu Fujiyoshida","coords":{"x": 40, "y": 28},"category": "Shrine",  "trivia": "A shrine honouring the scholar-god Tenjin, draped in moss and old-growth cedar above Fujiyoshida town."},
+    {"name": "Fuji Subaru Line Viewpoint","coords":{"x": 50, "y": 30},"category": "Structure", "trivia": "A dramatic roadside viewpoint at 2,000m where clouds form below the car while Fuji's summit remains clear above."},
+    {"name": "Gotemba Premium Outlets",  "coords": {"x": 68, "y": 60}, "category": "District",  "trivia": "Japan's largest outlet mall, uniquely positioned with a full-face view of Mt. Fuji rising above the shopping promenade."},
+    {"name": "Mishima Skywalk",          "coords": {"x": 65, "y": 72}, "category": "Structure", "trivia": "Japan's longest pedestrian suspension bridge at 400m. On clear days, Fuji's snow cap is visible directly ahead."},
+    {"name": "Kawaguchiko Music Forest", "coords": {"x": 35, "y": 50}, "category": "District",  "trivia": "A European-inspired museum of mechanical musical instruments set in a lakeside garden with Mt. Fuji as its backdrop."}
+  ]
+}
