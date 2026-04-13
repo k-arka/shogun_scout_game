@@ -47,8 +47,7 @@ next-env.d.ts
 Thumbs.db
 Desktop.ini
 
-# Agents / Project Specific
-.agents/
+# Project Specific
 .gemini/
 .idea/
 .vscode/
