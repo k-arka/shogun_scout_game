@@ -44,4 +44,4 @@ This document outlines the test cases required to ensure the high-fidelity, atmo
 | ID | Test Case | Target Behavior | Priority |
 | :--- | :--- | :--- | :--- |
 | **SEC-01** | No GenAI at Runtime | Ensure no external LLM/Image-Gen calls are made during the player gameplay loop. | Critical |
-| **SEC-02** | PII Check | Verify that no player identifying information (IP, name) is stored in SQLite or the Backend. | Critical |
+| **SEC-02** | PII Check | Verify that no player identifying information (IP, name) is requested by the application logic. | Critical |

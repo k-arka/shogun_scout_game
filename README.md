@@ -1,6 +1,6 @@
 # Shogun’s Scout ⛩️
 
-Shogun's Scout is an atmospheric, samurai-themed RPG scavenger hunt built with **FastAPI** and **Next.js**. Players take on the role of a Shogunate's scout, navigating dense fog to identify and eliminate spies hidden within iconic Japanese locations.
+Shogun's Scout is an atmospheric, samurai-themed RPG scavenger hunt built with **Next.js**. Players take on the role of a Shogunate's scout, navigating dense fog to identify and eliminate spies hidden within iconic Japanese locations. The game runs completely statelessly in the browser with zero external API dependencies.
 
 ## ✨ Project Overview
 The game blends geographic exploration with narrative strategy. Utilizing a grid-based **Fog of War** mechanic, players must explore 100x100 maps, interrogate landmarks, and uncover spies using their intuition and historical intel.
@@ -18,7 +18,7 @@ This project was developed using a structured, multi-agent workflow. The reposit
 | **Tech Lead** | Translates architecture to implementation logic. | `low_level_design.md`, State Schemas |
 | **QA Engineer** | Ensures reliability and bug-free logic. | `test_cases.md`, Integration test suites |
 | **Env Bootstrap** | Manages local environment and dependencies. | Local setup scripts, `.venv` configs |
-| **Code Implementer** | Writes the core application code via TDD. | FastAPI backend, Next.js frontend components |
+| **Code Implementer** | Writes the core application code via TDD. | Next.js frontend components, static data integration |
 
 ---
 
@@ -50,7 +50,6 @@ Players enter the 100x100 grid obscured by a radial **Fog of War**.
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Python 3.10+** (for the FastAPI backend)
 - **Node.js 18+** (for the Next.js frontend)
 
 ### Launching the Game
@@ -59,11 +58,11 @@ Simply run the included launcher script from the root directory:
 .\launch.ps1
 ```
 This script will:
-1. Verify permissions and virtual environments.
-2. Randomize landmark positions for a fresh game.
-3. Boot the FastAPI backend (Port 8000).
-4. Start the Next.js development server (Port 3000).
-5. Automatically open your browser to the game.
+1. Verify NPM installation.
+2. Start the Next.js development server (Port 3000).
+3. Automatically open your browser to the game.
+
+The entire map layout and coordinate generation algorithm runs dynamically within the browser at start time!
 
 ---
 

@@ -1,0 +1,26 @@
+{
+  "city": "Tokyo",
+  "region": "Kanto",
+  "spots": [
+    {"name": "Senso-ji Temple",       "coords": {"x": 82, "y": 12}, "category": "Temple",    "trivia": "Tokyo's oldest Buddhist temple, founded in 645 CE. Its Kaminarimon gate is iconic."},
+    {"name": "Meiji Shrine",           "coords": {"x": 22, "y": 18}, "category": "Shrine",   "trivia": "A Shinto shrine dedicated to Emperor Meiji and Empress Shoken, surrounded by a forested garden."},
+    {"name": "Edo Castle Ruins",       "coords": {"x": 50, "y": 50}, "category": "Fortress",  "trivia": "Once the largest castle in the world. Now home to the Imperial Palace."},
+    {"name": "Shinjuku Gyoen",         "coords": {"x": 30, "y": 35}, "category": "Garden",   "trivia": "A sprawling national garden blending French formal, English landscape, and Japanese traditional styles."},
+    {"name": "Nihonbashi Bridge",      "coords": {"x": 55, "y": 60}, "category": "Structure", "trivia": "The historic bridge marking 'kilometre zero' for all Japanese roads since the Edo period."},
+    {"name": "Tsukiji Outer Market",   "coords": {"x": 62, "y": 72}, "category": "Eatery",   "trivia": "The outer market adjacent to the famous Tsukiji fish market, renowned for fresh sushi and street food."},
+    {"name": "Yanaka Ginza",           "coords": {"x": 78, "y": 28}, "category": "District",  "trivia": "A charming old-fashioned shopping street preserving the atmosphere of pre-war Tokyo shitamachi."},
+    {"name": "Zojo-ji Temple",         "coords": {"x": 40, "y": 80}, "category": "Temple",   "trivia": "A significant Buddhist temple with a dramatic backdrop of Tokyo Tower."},
+    {"name": "Yasukuni Shrine",        "coords": {"x": 48, "y": 30}, "category": "Shrine",   "trivia": "A Shinto shrine memorializing Japan's war dead, surrounded by cherry blossom trees."},
+    {"name": "Tokyo Station Marunouchi","coords": {"x": 52, "y": 55}, "category": "Structure","trivia": "The iconic brick station facade, opened in 1914. A National Important Cultural Property."},
+    {"name": "Koenji Shotengai",       "coords": {"x": 15, "y": 45}, "category": "District",  "trivia": "A retro neighbourhood known for vintage shops, indie music, and the Awa Odori festival."},
+    {"name": "Tsurugaoka Hachimangu", "coords": {"x": 72, "y": 42}, "category": "Shrine",   "trivia": "Kamakura's most important Shinto shrine, dedicated to Hachiman, the god of archery and war."},
+    {"name": "Rikugien Garden",        "coords": {"x": 25, "y": 65}, "category": "Garden",   "trivia": "An Edo-period strolling garden representing 88 scenes from famous waka poetry."},
+    {"name": "Akihabara Electric Town","coords": {"x": 68, "y": 58}, "category": "District",  "trivia": "World-famous electronics and anime shopping district, a hub of otaku culture."},
+    {"name": "Atago Shrine",           "coords": {"x": 35, "y": 22}, "category": "Shrine",   "trivia": "Atop Atago Hill, the highest natural hill in Tokyo, famed for its steep stone staircase."},
+    {"name": "Ryogoku Kokugikan",      "coords": {"x": 88, "y": 62}, "category": "Structure", "trivia": "Japan's premier sumo arena, hosting three Grand Sumo Tournaments each year."},
+    {"name": "Kanda Myojin Shrine",    "coords": {"x": 58, "y": 38}, "category": "Shrine",   "trivia": "A colourful Shinto shrine in the heart of Tokyo, celebrated for its Kanda Festival."},
+    {"name": "Ameyoko Market",         "coords": {"x": 72, "y": 20}, "category": "Eatery",   "trivia": "A bustling open-air market near Ueno with hundreds of stalls selling food, clothing and goods."},
+    {"name": "Koishikawa Botanical Garden","coords": {"x": 42, "y": 15},"category": "Garden","trivia": "Tokyo University's botanical garden, one of Japan's oldest, featuring majestic plum trees."},
+    {"name": "Hamarikyu Gardens",      "coords": {"x": 58, "y": 82}, "category": "Garden",   "trivia": "A beautiful garden beside Tokyo Bay with a tidal pond, formerly a Tokugawa clan hunting ground."}
+  ]
+}

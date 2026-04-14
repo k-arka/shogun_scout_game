@@ -48,11 +48,11 @@ An accessible, highly replayable browser-based RPG scavenger hunt offering a uni
 
 ## 6. Technical Architecture & Constraints
 - **Shell Engine Design:** The game engine is built to dynamically load new map geometries via simple JSON configurations (ID, Name, 20 spot names/categories/trivia).
-- **Spot Positions — Randomly Dispersed:** Landmark grid coordinates (`pos_x`, `pos_y`) are **not fixed in the JSON files**. Instead, `data/seed.py` generates well-spread positions using a **Poisson-disc dispersal algorithm** at seed time, guaranteeing:
+- **Spot Positions — Randomly Dispersed:** Landmark grid coordinates (`pos_x`, `pos_y`) are **not fixed in the JSON files**. Instead, `frontend/lib/seed.ts` statically generates well-spread positions using a **TypeScript Poisson-disc dispersal algorithm** directly in the browser, guaranteeing:
   - Minimum 13-unit separation between any two spots
   - 8-unit margin from all edges so spots never appear at the border
   - Even distribution across the entire 100×100 grid with no clustering in one area
-  - Deterministic output per city (hash-seeded) for consistent re-seeds
+  - In-session `sessionStorage` constraints so that "Commence Scouting" triggers entirely new fresh layouts instantly without database reloading.
 - **Map & Image Ingestion Pipeline:** The Technical Team must define a rigorous pipeline for ingesting new maps. While location data and trivia are provided via JSON, the team is responsible for defining how the 20 high-fidelity static site images are sourced, optimized, and served—while maintaining the constraint of zero runtime generative AI.
 - **Strict Iconography Schema:** 7 core static icons to maintain parity across all dynamic maps:
   - Shrine = Red Torii Gate (⛩️)

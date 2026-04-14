@@ -40,19 +40,15 @@ shogun_scout_game/
 │       │   ├── osaka/ ...
 │       │   ├── hokkaido/ ...
 │       │   └── fuji_viewpoints/ ...
-│       └── assets/maps/                  # Creator Studio uploads
-├── backend/                              # (unchanged)
-│   ├── api/routes.py
-│   ├── core/{db.py, agents.py}
-│   └── models/schemas.py
-└── data/
-    ├── dev.db
-    ├── seed.py                           # UPDATE: seeds all 5 maps
-    ├── tokyo_seed.json
-    ├── kyoto_seed.json
-    ├── osaka_seed.json
-    ├── hokkaido_seed.json
-    └── fuji_viewpoints_seed.json
+│       ├── assets/maps/                  # Creator Studio uploads
+│       └── data/                         # NEW: 5 static map JSON payloads
+│           ├── tokyo_seed.json
+│           ├── kyoto_seed.json
+│           ├── osaka_seed.json
+│           ├── hokkaido_seed.json
+│           └── fuji_viewpoints_seed.json
+├── backend/                              # [DEPRECATED] FastAPI backend removed
+└── data/                                 # [DEPRECATED] SQLite db and Python seeds removed
 ```
 
 ---
@@ -230,34 +226,27 @@ Clicking "New Game" opens a modal with "Abandon Mission?" copy and two buttons:
 
 ---
 
-## 3. Backend Routes — Additions
+## 3. Architecture Change: Serverless Static Migration
 
-### 3.1 New Endpoint: `GET /api/maps/{map_id}` (detail)
-Returns map metadata including a `subtitle` field for UI display.
+### 3.1 Static Endpoint Deprecation
+The Python FastAPI backend and SQLite `dev.db` have been fully stripped to allow the game to run as a purely **Static Next.js SSG**. 
+- The `GET /api/maps` and `GET /api/maps/{map_id}/spots` are now native fetch calls hitting `/data/{map_id}_seed.json` directly from the `public` folder.
+- This entirely mitigates Cross-Origin (CORS) blocks, local 127.0.0.1 permission warnings ("Access other apps and services on this device"), and the need to mount a Python runtime on Vercel Serverless. 
 
-### 3.2 Seed Script (`data/seed.py`) — Random Position Dispersal
+### 3.2 Client-Side Procedural Generation (`lib/seed.ts`)
 
 Spot coordinates stored in the JSON files (`coords.x`, `coords.y`) are **legacy reference values only** and are **not used** during seeding by default.
 
-The seed script uses a **Poisson-disc dispersal algorithm** to generate well-spread positions at seed time:
+The backend `seed.py` was rewritten to a TypeScript module natively bundled into the Next.js client (`frontend/lib/seed.ts`).
 
-```sh
-python data/seed.py               # seeds all 5 maps with stratified Poisson-disc positions
-python data/seed.py --map kyoto   # seeds only kyoto
-python data/seed.py --fixed       # legacy: uses the exact coords from JSON (not recommended)
-python data/seed.py --randomize   # time-based seed: different layout on every run
-```
-
-**Dispersal guarantees (v2 algorithm):**
+**Dispersal guarantees:**
 - Two seed points are placed in each of the **4 quadrants** before Bridson expansion — guaranteeing at least 8 spots spread heavily around the perimeter.
 - Minimum 16-unit separation between any two spots (previously 10)
 - 4-unit margin from all grid edges (spots always in the 4–96 range)
 - Bridson expansion throws points outwards up to 2.5x the minimum radius to ensure wide dispersal
 - Fallback: if Bridson cannot fill N spots at strict min-dist, the algorithm progressively relaxes down to 4.5 units
-- `--randomize` flag uses a time-based seed for a fresh layout on each run.
-- **Dynamic In-Session Reseeding:** The `launch.bat` wrapper no longer needs to scramble the layout. Instead, when a user clicks "Commence Scouting," the frontend hits `POST /api/maps/{map_id}/randomize`. This scrambles the specific map coordinates dynamically via the backend directly before navigation to the play screen.
 
-No schema changes are required — `pos_x` / `pos_y` are plain integers in SQLite.
+- **Dynamic In-Session Reseeding:** The launcher no longer scrambles the layout. Instead, when a user clicks "Commence Scouting," the frontend `sessionStorage.removeItem('seed_...')` is called. This clears the RNG seed causing the `frontend/lib/api.ts` module to scramble the specific map coordinates dynamically *in the browser* directly before navigation to the play screen.
 
 ---
 

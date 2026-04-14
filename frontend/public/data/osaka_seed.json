@@ -1,0 +1,26 @@
+{
+  "city": "Osaka",
+  "region": "Kansai",
+  "spots": [
+    {"name": "Osaka Castle",            "coords": {"x": 62, "y": 28}, "category": "Fortress",  "trivia": "Built by Toyotomi Hideyoshi in 1583. One of Japan's most famous landmarks, surrounded by moats and stone walls."},
+    {"name": "Dotonbori",               "coords": {"x": 48, "y": 62}, "category": "District",  "trivia": "Osaka's entertainment hub, famous for its neon signs, the Glico Running Man, and endless street food stalls."},
+    {"name": "Shitennoji Temple",       "coords": {"x": 52, "y": 72}, "category": "Temple",   "trivia": "Founded in 593 CE by Prince Shotoku — one of the oldest officially administered temples in Japan."},
+    {"name": "Sumiyoshi Taisha",        "coords": {"x": 42, "y": 88}, "category": "Shrine",   "trivia": "One of Japan's oldest shrines, dedicated to sea gods. Its distinctive architecture predates Buddhism's influence."},
+    {"name": "Kuromon Ichiba Market",   "coords": {"x": 52, "y": 65}, "category": "Eatery",   "trivia": "Called 'Osaka's Kitchen' — a 600-stall covered market where locals shop for the freshest seafood and produce."},
+    {"name": "Tsutenkaku Tower",        "coords": {"x": 48, "y": 75}, "category": "Structure", "trivia": "A retro tower in the Shinsekai district. Rebuilt in 1956, it symbolises Osaka's post-war recovery and Billiken."},
+    {"name": "Shinsekai District",      "coords": {"x": 45, "y": 78}, "category": "District",  "trivia": "A nostalgic neighbourhood built as 'the new world' in 1912, mixing Parisian and New York styles. Home of kushikatsu."},
+    {"name": "Nakanoshima Park",        "coords": {"x": 42, "y": 45}, "category": "Garden",   "trivia": "A rose garden and park on an island between two rivers in central Osaka. A beloved urban green escape."},
+    {"name": "Osaka Aquarium Kaiyukan","coords": {"x": 22, "y": 48}, "category": "Structure", "trivia": "One of the world's largest aquariums, built around the Pacific Ocean ecosystem and centred on whale sharks."},
+    {"name": "Tempozan Ferris Wheel",   "coords": {"x": 20, "y": 52}, "category": "Structure", "trivia": "Once the world's largest Ferris wheel. Light-up displays forecast the next day's weather for locals."},
+    {"name": "Tennoji Zoo",             "coords": {"x": 50, "y": 78}, "category": "Garden",   "trivia": "One of Japan's oldest zoos (1915), adjacent to the Tennoji Park gardens and the ancient Shitennoji."},
+    {"name": "Namba Yasaka Shrine",     "coords": {"x": 44, "y": 68}, "category": "Shrine",   "trivia": "Famous for its enormous lion-head stage used in traditional Noh and Kagura dance performances."},
+    {"name": "Hozenji Yokocho",         "coords": {"x": 50, "y": 63}, "category": "Eatery",   "trivia": "A moss-covered cobblestone alley with tiny restaurants and bars, centred on the moss-covered Fudo Myo-o statue."},
+    {"name": "Expo Commemoration Park", "coords": {"x": 18, "y": 20}, "category": "Garden",   "trivia": "The site of the 1970 World Expo. Features the iconic Tower of the Sun by Taro Okamoto and vast Japanese gardens."},
+    {"name": "Minoo Park Waterfall",    "coords": {"x": 25, "y": 15}, "category": "Garden",   "trivia": "A forested park north of Osaka famous for its 33-metre waterfall and brilliant autumn maple foliage."},
+    {"name": "Tenjinbashisuji Shotengai","coords": {"x": 48, "y": 38}, "category": "District", "trivia": "Japan's longest covered shopping street, stretching 2.6 km with over 600 shops from traditional to modern."},
+    {"name": "Osaka Museum of History", "coords": {"x": 60, "y": 32}, "category": "Structure", "trivia": "A 10-storey museum overlooking Osaka Castle with reconstructed Naniwa Palace interiors and cityscape views."},
+    {"name": "Shitenno-ji Haiden",      "coords": {"x": 54, "y": 70}, "category": "Temple",   "trivia": "The main hall of Shitennoji where flea markets are held on the 21st and 22nd of each month in the temple precincts."},
+    {"name": "Tsuyu no Ten Shrine",     "coords": {"x": 46, "y": 40}, "category": "Shrine",   "trivia": "The love shrine near Sonezaki — dedicated to Ohatsu and Tokubei, Japan's most famous tragic lovers."},
+    {"name": "Namba Grand Kagetsu",     "coords": {"x": 47, "y": 66}, "category": "Eatery",   "trivia": "Osaka's legendary comedy theatre, home of the Yoshimoto manzai comedy tradition since 1912."}
+  ]
+}
