@@ -293,8 +293,11 @@ export default function WarRoomPage() {
               onClick={async () => { 
                 emitPreview(null); 
                 try {
-                  const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-                  await fetch(`${apiUrl}/api/maps/${selectedMap}/randomize`, { method: "POST" });
+                  const isLocal = typeof window !== "undefined" && window.location.hostname === "localhost";
+                  const apiUrl = process.env.NEXT_PUBLIC_API_URL || (isLocal ? "http://localhost:8000" : "");
+                  if (apiUrl) {
+                    await fetch(`${apiUrl}/api/maps/${selectedMap}/randomize`, { method: "POST" });
+                  }
                 } catch (e) {
                   console.error("Failed to randomize map layout", e);
                 }
