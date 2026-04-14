@@ -4,10 +4,22 @@
  */
 
 const getApiBase = () => {
-  if (process.env.NEXT_PUBLIC_API_URL) return process.env.NEXT_PUBLIC_API_URL;
-  if (typeof window !== "undefined" && window.location.hostname === "localhost") {
+  const isLocal = typeof window !== "undefined" && window.location.hostname === "localhost";
+  const envVar = process.env.NEXT_PUBLIC_API_URL || "";
+
+  // Defensive: if the env var was set to localhost but we're in prod, clear it
+  if (envVar.includes("localhost") && !isLocal) {
+    return "";
+  }
+
+  if (envVar && !envVar.includes("localhost") && !envVar.includes("127.0.0.1")) {
+    return envVar;
+  }
+  
+  if (isLocal) {
     return "http://localhost:8000";
   }
+
   return "";
 };
 

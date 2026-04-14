@@ -294,8 +294,14 @@ export default function WarRoomPage() {
                 emitPreview(null); 
                 try {
                   const isLocal = typeof window !== "undefined" && window.location.hostname === "localhost";
-                  const apiUrl = process.env.NEXT_PUBLIC_API_URL || (isLocal ? "http://localhost:8000" : "");
-                  if (apiUrl) {
+                  let apiUrl = process.env.NEXT_PUBLIC_API_URL || (isLocal ? "http://localhost:8000" : "");
+                  
+                  // Defensive: if the env var was set to localhost but we're in prod, clear it
+                  if (apiUrl.includes("localhost") && !isLocal) {
+                    apiUrl = "";
+                  }
+
+                  if (apiUrl || isLocal) {
                     await fetch(`${apiUrl}/api/maps/${selectedMap}/randomize`, { method: "POST" });
                   }
                 } catch (e) {
