@@ -3,6 +3,7 @@
  * loads Japanese fonts, and wraps TanStack Query provider.
  */
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "./globals.css";
 import ThemeWrapper from "@/components/ThemeWrapper";
@@ -22,7 +23,9 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col">
         <NuqsAdapter>
           <QueryProvider>
-            <ThemeWrapper>{children}</ThemeWrapper>
+            <Suspense fallback={null}>
+              <ThemeWrapper>{children}</ThemeWrapper>
+            </Suspense>
           </QueryProvider>
         </NuqsAdapter>
       </body>
