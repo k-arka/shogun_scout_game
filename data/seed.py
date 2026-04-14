@@ -168,9 +168,20 @@ def seed_map(filename: str, use_fixed: bool = False, randomize: bool = False):
 
     spots = payload["spots"]
 
-    if len(spots) != 20:
-        print(f"ERROR: {filename} has {len(spots)} spots, expected 20.")
+    if len(spots) < 20:
+        print(f"ERROR: {filename} has {len(spots)} spots, expected at least 20.")
         return
+
+    # Randomly select exactly 20 spots if more than 20 are available
+    if len(spots) > 20:
+        if randomize:
+            import time
+            select_seed = int(time.time() * 1000) ^ hash(map_id)
+        else:
+            select_seed = hash(map_id)
+        
+        rng_select = random.Random(select_seed)
+        spots = rng_select.sample(spots, 20)
 
     if use_fixed:
         # Use the explicit coords stored in the JSON (legacy mode)

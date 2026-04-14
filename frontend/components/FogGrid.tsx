@@ -223,7 +223,7 @@ export default function FogGrid({ spots, mapId, theme }: Props) {
           </div>
           <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-sm border border-white/5 opacity-70">
             <span className="text-base">⛩️</span>
-            <span>{visitedCount}/20 Visited</span>
+            <span>{visitedCount}/{spots.length} Visited</span>
           </div>
         </div>
 
@@ -503,7 +503,7 @@ export default function FogGrid({ spots, mapId, theme }: Props) {
                   <div className="flex justify-center gap-12 font-bold tracking-widest uppercase text-xs border-y border-current/15 py-4">
                     <div>Time: {formatTime(seconds)}</div>
                     <div>Spies: 5/5</div>
-                    <div>Sites: {visitedCount}/20</div>
+                    <div>Sites: {visitedCount}/{spots.length}</div>
                   </div>
                   <div className="flex gap-4 justify-center pt-4">
                     <button

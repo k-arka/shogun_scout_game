@@ -2,6 +2,7 @@
 FastAPI route definitions for Shogun's Scout.
 """
 import json
+import logging
 from typing import List
 
 from fastapi import APIRouter, HTTPException, UploadFile, File, Form, Depends
@@ -18,7 +19,8 @@ from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent.parent))
 try:
     from data.seed import seed_map, SEED_FILES
-except ImportError:
+except ImportError as e:
+    logging.error(f"Failed to import data.seed: {e}")
     seed_map = None
     SEED_FILES = {}
 
@@ -45,12 +47,28 @@ def list_maps(conn: sqlite3.Connection = Depends(db_conn)):
 @router.get("/api/maps/{map_id}/spots", response_model=List[SpotOut])
 def get_spots(map_id: str, conn: sqlite3.Connection = Depends(db_conn)):
     """Return the 20 spots for a given map, enriched with their emoji icon."""
+    # Safety: if no spots exist, try to seed once with default layout
     rows = conn.execute(
         "SELECT * FROM spots WHERE map_id = ? ORDER BY id",
         (map_id,),
     ).fetchall()
+
     if not rows:
-        raise HTTPException(status_code=404, detail=f"Map '{map_id}' not found or has no spots.")
+        # Attempt "on-demand" seed if the database is fresh
+        if seed_map and map_id in SEED_FILES:
+            logging.info(f"Map '{map_id}' has no spots. Attempting on-demand seed...")
+            seed_map(SEED_FILES[map_id], randomize=False)
+            rows = conn.execute(
+                "SELECT * FROM spots WHERE map_id = ? ORDER BY id",
+                (map_id,),
+            ).fetchall()
+
+    if not rows:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Map '{map_id}' has no spots and could not be auto-seeded."
+        )
+
     results = []
     for r in rows:
         d = dict(r)
@@ -65,9 +83,15 @@ def randomize_map_route(map_id: str):
     Dynamically triggers a completely fresh procedural layout for the given map.
     Allows new application sessions to be completely varied.
     """
+    if not seed_map:
+        raise HTTPException(
+            status_code=500,
+            detail="Seeding engine not available in this environment."
+        )
+
     if map_id not in SEED_FILES:
         raise HTTPException(status_code=404, detail="Map JSON not found for dynamic re-seeding.")
-    if seed_map:
-        seed_map(SEED_FILES[map_id], randomize=True)
+
+    seed_map(SEED_FILES[map_id], randomize=True)
     return {"status": "success"}
 
