@@ -46,24 +46,17 @@ An accessible, highly replayable browser-based RPG scavenger hunt offering a uni
 - **Static Content Pipeline:** All map JSON data and static image assets are strictly curated by the tech team. The mandate of "Zero Runtime GenAI" prevents hallucinations, prompt injection, and unfiltered unsafe content generation.
 - **Content Moderation Scope:** Since there is no user-to-user chat, UGC (User Generated Content) uploads, or global leaderboards, toxic behavior profiles are organically mitigated.
 
-## 6. Technical Architecture & Constraints
-- **Shell Engine Design:** The game engine is built to dynamically load new map geometries via simple JSON configurations (ID, Name, 20 spot names/categories/trivia).
-- **Spot Positions — Randomly Dispersed:** Landmark grid coordinates (`pos_x`, `pos_y`) are **not fixed in the JSON files**. Instead, `frontend/lib/seed.ts` statically generates well-spread positions using a **TypeScript Poisson-disc dispersal algorithm** directly in the browser, guaranteeing:
-  - Minimum 13-unit separation between any two spots
-  - 8-unit margin from all edges so spots never appear at the border
-  - Even distribution across the entire 100×100 grid with no clustering in one area
-  - In-session `sessionStorage` constraints so that "Commence Scouting" triggers entirely new fresh layouts instantly without database reloading.
-- **Map & Image Ingestion Pipeline:** The Technical Team must define a rigorous pipeline for ingesting new maps. While location data and trivia are provided via JSON, the team is responsible for defining how the 20 high-fidelity static site images are sourced, optimized, and served—while maintaining the constraint of zero runtime generative AI.
-- **Strict Iconography Schema:** 7 core static icons to maintain parity across all dynamic maps:
-  - Shrine = Red Torii Gate (⛩️)
-  - Temple = Five-story Pagoda
-  - Fortress = Tenshu (Castle Keep)
-  - Garden = Bonsai Tree
-  - Structure = Wooden Arched Bridge
-  - Eatery = Chochin (Paper Lantern)
-  - District = Machiya House Silhouette
-- **Fog of War Visibility:** The radial fog overlay uses a maximum opacity of ~28% at grid edges, ensuring the themed background image remains clearly legible at all times while still providing the map-exploration mechanic.
-- **Aesthetic Enforcement:** Hardcoded CSS variables and assets for themes like "Cyber Smoke" and "Lantern Dusk."
+## 6. Development Philosophy & Constraints
+- **Map Expandability:** The system is designed to load new territories via data files, allowing the game to grow without core code changes.
+- **Dynamic Replayability:** Landmark positions are generated at the start of every session to ensure a fresh experience. The distribution logic guarantees:
+  - Locations are spread evenly across the entire screen (no clustering in corners).
+  - Every quadrant of the map contains multiple points of interest.
+  - Landmarks never overlap or appear too close to the screen edges.
+  - "New Game" actions refresh the layout immediately for instant replay.
+- **Zero Runtime AI:** To ensure safety and performance, all narrative content, trivia, and imagery are pre-authored and curated.
+- **Standardized Iconography:** 7 consistent landmark categories (Shrines, Temples, Fortresses, etc.) ensure visual familiarity across different cities.
+- **Atmospheric Legibility:** The Fog of War mechanic is tuned to provide a sense of discovery without obscuring the beautiful background themes or making navigation frustrating.
+- **Aesthetic Consistency:** UI themes are strictly defined to maintain the "Samurai RPG" vibe across all map locations.
 
 ## 7. Wireframes
 
@@ -106,7 +99,7 @@ An accessible, highly replayable browser-based RPG scavenger hunt offering a uni
 ### 7.3 Main HUD & Gameplay
 ```text
 +---------------------------------------------------------+
-| [04:12:87]                      Spies: 2/5 | Intel: 8/20|
+| [📍 TOKYO]   [04:12:87]        Spies: 2/5 | Intel: 8/20 |
 | [ℹ️] Use Arrow Keys to Move | [Enter] Key: Details | [I] Key: Interrogate |
 |    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░    |
 |    ░░░░░░░░░░░░░░░░░░░ [ FOG ] ░░░░░░░░░░░░░░░░░░░░░    |

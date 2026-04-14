@@ -38,7 +38,7 @@ Players enter the 100x100 grid obscured by a radial **Fog of War**.
 - **Movement**: Navigate using **Arrow Keys**.
 - **Landmarks**: Approach glowing landmarks (Shrines, Temples, Fortresses).
 - **Interrogation**: Press `Enter` to perform an interrogation at the site and learn more about the landmark.
-- **Dynamic Randomization**: Landmarks are dispersed using a *Poisson-disc dispersal algorithm*, ensuring no clustering and a fresh challenge every game.
+- **Dynamic Randomization**: Landmarks are dispersed across the entire map using a balanced distribution algorithm, ensuring coverage in every quadrant and preventing clustering. Each game session generates a completely unique and fair layout!
 
 ### 4. Resolution & Victory
 - **Safe Spots**: Marked with a Green Tick.

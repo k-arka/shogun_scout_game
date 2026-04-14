@@ -213,6 +213,10 @@ export default function FogGrid({ spots, mapId, theme }: Props) {
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)]/40 to-transparent" />
 
         <div className="flex items-center gap-4 text-[11px] font-black tracking-[0.12em] uppercase">
+          <h1 className="flex items-center gap-2 bg-[var(--accent)]/15 px-4 py-1.5 rounded-sm border border-[var(--accent)]/30 text-[var(--accent)] text-xs tracking-[0.2em] shadow-sm uppercase">
+            <span className="text-base leading-none translate-y-[-1px]">📍</span>
+            {mapId.replace("fuji_viewpoints", "fuji").replace(/_/g, " ")}
+          </h1>
           <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-sm border border-white/5">
             <span className="text-base opacity-80">⏳</span>
             <span className="text-[var(--accent)] font-mono">{formatTime(seconds)}</span>

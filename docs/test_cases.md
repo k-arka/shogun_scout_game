@@ -12,6 +12,7 @@ This document outlines the test cases required to ensure the high-fidelity, atmo
 | **GP-04** | Spy Reveal Logic | Upon "Interrogation", a random 5 of the 20 spots trigger the "Slash" animation and turn Red (`👺`). Rest turn Green (`✅`). | High |
 | **GP-05** | Victory Condition | Game transitions to Victory Screen exactly after the 5th spy is found. | High |
 | **GP-06** | Timer Accuracy | The HUD timer (`⏳`) tracks elapsed time accurately in `MM:SS:CC` format. | Medium |
+| **GP-07** | HUD Map Title | The HUD accurately displays the location name (e.g., `📍 TOKYO`) based on URL selection. | Medium |
 
 ---
 
