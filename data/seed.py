@@ -74,7 +74,7 @@ def generate_dispersed_positions(n: int, min_dist: float = 16.0, margin: float =
         active.append((x, y))
         grid[grid_key(x, y)] = (x, y)
 
-    # ── Step 1: seed TWO points in each of the 4 quadrants ─────────────────
+    # ── Step 1: seed THREE points in each of the 4 quadrants ───────────────
     quadrants = [
         (lo,  lo,  mid, mid),  # top-left
         (mid, lo,  hi,  mid),  # top-right
@@ -82,7 +82,7 @@ def generate_dispersed_positions(n: int, min_dist: float = 16.0, margin: float =
         (mid, mid, hi,  hi),   # bottom-right
     ]
     for (x0, y0, x1, y1) in quadrants:
-        for _ in range(2):
+        for _ in range(3):
             placed = False
             for _attempt in range(50):
                 sx = rng.uniform(x0 + (x1-x0)*0.10, x1 - (x1-x0)*0.10)
@@ -106,7 +106,7 @@ def generate_dispersed_positions(n: int, min_dist: float = 16.0, margin: float =
         if not active:
             # All active exhausted – relax min_dist and retry from all points
             current_md *= 0.80
-            if current_md < 4.5:
+            if current_md < 8.0:
                 break
             active.extend(positions)
             continue
@@ -131,7 +131,7 @@ def generate_dispersed_positions(n: int, min_dist: float = 16.0, margin: float =
         for _ in range(5000):
             x = rng.uniform(lo, hi)
             y = rng.uniform(lo, hi)
-            if not too_close(x, y, 4.5):
+            if not too_close(x, y, 8.0):
                 add_point(x, y)
             if len(positions) >= n:
                 break

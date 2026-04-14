@@ -58,7 +58,7 @@ export function generateDispersedPositions(
     grid.set(gridKey(x, y), { x, y });
   }
 
-  // Step 1: Seed two points in each quadrant
+  // Step 1: Seed three points in each quadrant
   const quadrants = [
     [lo, lo, mid, mid], // top-left
     [mid, lo, hi, mid], // top-right
@@ -67,7 +67,7 @@ export function generateDispersedPositions(
   ];
 
   for (const [x0, y0, x1, y1] of quadrants) {
-    for (let c = 0; c < 2; c++) {
+    for (let c = 0; c < 3; c++) {
       let placed = false;
       for (let attempt = 0; attempt < 50; attempt++) {
         const sx = x0 + (x1 - x0) * 0.1 + rng() * ((x1 - x0) * 0.8);
@@ -93,7 +93,7 @@ export function generateDispersedPositions(
   while (positions.length < n) {
     if (active.length === 0) {
       currentMd *= 0.8;
-      if (currentMd < 4.5) break;
+      if (currentMd < 8.0) break;
       active.push(...positions);
       continue;
     }
@@ -125,7 +125,7 @@ export function generateDispersedPositions(
     for (let i = 0; i < 5000; i++) {
       const x = lo + rng() * span;
       const y = lo + rng() * span;
-      if (!tooClose(x, y, 4.5)) {
+      if (!tooClose(x, y, 8.0)) {
         addPoint(x, y);
       }
       if (positions.length >= n) break;
